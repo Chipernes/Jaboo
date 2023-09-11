@@ -1,0 +1,17 @@
+// Headers, general BEM blocks, etc...
+.block-heading {
+  &__subtitle {
+
+    &_display {
+    }
+  }
+
+  &__title {
+
+    &_display {
+    }
+
+    &_center {
+    }
+  }
+}

@@ -1,0 +1,187 @@
+// Connecting mixins ===========================================================================================================================================================================================================================================================================
+@import "base/mixins.scss";
+
+// Connecting fonts ===========================================================================================================================================================================================================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap');
+//&display=swap - add when connecting via plugin
+
+// Connect if there are local font files
+//@import "fonts/fonts.scss";
+
+// Connect icon fonts =========================================== ================================================= ================================================= ================================================= ================================================= =========================
+// Include if there is an icon font file
+//@import "fonts/icons.scss";
+
+// Default font ==============================================================================================================================================================================================================================================================================
+$fontFamily: "Poppins", serif;
+$fontSize: rem(16); // where 14(px) is the default font size from the layout
+
+// Primary colors
+$mainColor: #5E6282; // Default font color
+
+// Variables
+// Fonts
+@mixin display-font-size {
+  @include adaptiveValue("font-size", 84, 54); //84px
+}
+@mixin h2-font-size {
+  @include adaptiveValue("font-size", 50, 32); //50px
+}
+@mixin h3-font-siz {
+  @include adaptiveValue("font-size", 32, 26); //32px
+}
+@mixin h4-font-size {
+  @include adaptiveValue("font-size", 20, 8); //20px
+}
+@mixin h5-font-size {
+  @include adaptiveValue("font-size", 18, 16); //18px
+}
+@mixin h6-font-size {
+  @include adaptiveValue("font-size", 16, 14); //16px
+}
+
+:root {
+  // Fonts and typography
+  --display-font-size: 5.25rem; //84px
+  --h2-font-size: 3.125rem; //50px
+  --h3-font-size: 2rem; //32px
+  --h4-font-size: 1.25rem; //20px
+  --h5-font-size: 1.125rem; //18px
+  --h6-font-size: 1rem; //16px
+  --addition-small-font: 0.875rem; //14px
+
+  --title-font:"Volkhov", serif;
+  --text-font:"Poppins", serif;
+  --selected-font:"Open Sans", serif;
+
+
+  // Colors
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  --primary-1: #F1A501;
+  --primary-2: #8A79DF;
+
+  --button-gradient: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);
+  --hover-socials-gradient: conic-gradient(from 180deg at 50% 50%, #B8D2F1 0deg, #F289AA 60.00000178813934deg, #C68BF0 106.09081864356995deg, #D164DA 153.7500035762787deg, #C963E8 221.24999284744263deg, #BFC2E8 258.75deg, #FFC999 288.7499928474426deg, #D0D8C9 315deg, #BAD0F1 334.13365602493286deg, #CED8CB 358.9677572250366deg, rgba(255, 255, 255, 0.00) 360deg);
+
+  --display-title-color: #181E4B;
+  --title-color: #14183E;
+  --text-color: #5E6282;
+  --nav-color: #212832;
+
+  --addition-color-1: #DF6951;
+  --addition-color-2: #84829A;
+}
+
+// SETTINGS ============================================= ================================================= ================================================= ================================================= ================================================= ========================================
+// Minimum page width
+$minWidth: 320;
+// Canvas (layout) width
+$maxWidth: 1440;
+// Bounding Container Width (0 = No Bounding)
+$maxWidthContainer: 1200;
+// General container padding
+// (30 = 15px left and right, 0 = no padding)
+$containerPadding: 30;
+
+// The width of the first breakpoint
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Break points
+$pc: em($containerWidth); // PCs, laptops, some tablets horizontally
+$tablet: em(991.98); // Tablets, some phones in landscape position
+$mobile: em(767.98); // Phones L
+$mobileSmall: em(479.98); // Phones S
+
+// Adaptive type:
+// 1 = responsive (container has no breakpoints),
+// 2 = by break points (container changes its width by break points)
+$responsiveType: 1;
+
+// Zeroing and general parameters ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
+@import "base/null.scss";
+
+body {
+  // Scroll locked
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+  // Site loaded
+  .loaded & {
+  }
+}
+
+// Wrapper ============================================================================================================================================================================================================================================================================================================================================================================================================================================
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // snuggling footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Fix for sliders
+  > * {
+    min-width: 0;
+  }
+}
+
+// Bounding container ======================================================================================================================================================================================================================
+
+/*
+(i) Styles will be applied to
+to all classes containing *__container
+For example header__container, main__container etc.
+*/
+@if ($responsiveType==1) {
+  // Responsive
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+      padding: 0 rem(calc($containerPadding / 2));
+    }
+  }
+} @else {
+  // By break points
+  [class*="__container"] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(calc($containerPadding / 2));
+      }
+    }
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(calc($containerPadding / 2));
+      }
+    }
+  }
+}
+
+
+// Connecting styles of common project elements
+@import "common.scss";
+
+// Connecting individual block styles
+@import "header.scss";
+@import "footer.scss";
+
+// Connecting individual page styles
+@import "home.scss";

@@ -22,12 +22,6 @@
     @media (max-width: $mobile) {
       @include adaptiveValue("margin-right", 30, 15);
     }
-    
-    @media (max-width: rem(425)) {
-      flex-direction: column;
-      align-items: start;
-      row-gap: 15px;
-    }
   }
 
   &__logo {
@@ -132,6 +126,13 @@
     justify-content: center;
     align-items: center;
     @include adaptiveValue("gap", 50, 20);
+
+    @media (max-width: rem(425)) {
+      flex-direction: column;
+      justify-content: start;
+      row-gap: rem(35);
+      flex-wrap: initial;
+    }
   }
 
   &__popup {
@@ -159,6 +160,13 @@
     font-family: var(--selected-font);
     font-weight: 700;
     color: var(--nav-color);
+
+    .menu-open & {
+      @media (max-width: rem(425)) {
+        font-size: var(--h4-font-size);
+        color: var(--white-color);
+      }
+    }
   }
 
   &__spoiler {
@@ -176,6 +184,17 @@
     & svg {
       width: rem(9);
       height: rem(4.5);
+
+      stroke: var(--nav-color);
+
+      .menu-open & {
+        @media (max-width: rem(425)) {
+          width: rem(18);
+          height: rem(9);
+
+          stroke: var(--white-color);
+        }
+      }
     }
   }
 }

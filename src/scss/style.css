@@ -265,13 +265,6 @@ For example header__container, main__container etc.
     }
   }
 }
-@media (max-width: 26.5625rem) {
-  .menu__body {
-    flex-direction: column;
-    align-items: start;
-    row-gap: 15px;
-  }
-}
 .menu__logo svg {
   width: 7.1875rem;
   height: 2.125rem;
@@ -372,6 +365,14 @@ For example header__container, main__container etc.
     gap: calc(1.25rem + 1.875 * (100vw - 20rem) / 56.875);
   }
 }
+@media (max-width: 26.5625rem) {
+  .menu__personalisation {
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 2.1875rem;
+    flex-wrap: initial;
+  }
+}
 .menu__popup {
   flex-shrink: 0;
 }
@@ -393,6 +394,12 @@ For example header__container, main__container etc.
   font-weight: 700;
   color: var(--nav-color);
 }
+@media (max-width: 26.5625rem) {
+  .menu-open .menu__popup-link {
+    font-size: var(--h4-font-size);
+    color: var(--white-color);
+  }
+}
 .menu__spoiler {
   display: flex;
   justify-content: center;
@@ -407,6 +414,14 @@ For example header__container, main__container etc.
 .menu__spoiler svg {
   width: 0.5625rem;
   height: 0.28125rem;
+  stroke: var(--nav-color);
+}
+@media (max-width: 26.5625rem) {
+  .menu-open .menu__spoiler svg {
+    width: 1.125rem;
+    height: 0.5625rem;
+    stroke: var(--white-color);
+  }
 }
 
 .icon-menu {

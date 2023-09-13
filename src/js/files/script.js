@@ -1,4 +1,5 @@
 // Burger menu
+const body = document.querySelector('body');
 const burger = document.querySelector('.icon-menu');
 const menuList = document.querySelector('.menu__list');
 const menuPersonalisation = document.querySelector('.menu__personalisation');
@@ -7,6 +8,7 @@ burger?.addEventListener('click', () => {
     burger.classList.toggle('menu-open');
     menuList.classList.toggle('menu-open');
     menuPersonalisation.classList.toggle('menu-open');
+    body.classList.toggle('lock');
 });
 
 // Changing of list
@@ -30,4 +32,15 @@ function checkWidth() {
     }
 }
 
+// Fixed header
+const header = document.querySelector('.header');
+const page = document.querySelector('.page');
 
+page.style.marginTop = header.offsetHeight + 'px';
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > header.offsetHeight) {
+        header.classList.add('header_fixed');
+    } else {
+        header.classList.remove('header_fixed');
+    }
+});

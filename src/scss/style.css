@@ -221,6 +221,30 @@ For example header__container, main__container etc.
   color: var(--white-color);
 }
 
+.card-category {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  border: 3px solid var(--addition-color-1);
+  border-radius: 36px;
+}
+.card-category__title {
+  margin-bottom: 0.9375rem;
+  font-size: var(--h4-font-size);
+  font-family: var(--selected-font);
+  font-weight: 600;
+  color: var(--display-title-color);
+}
+.card-category__text {
+  max-width: 11.25rem;
+  text-align: center;
+  font-weight: 500;
+  line-height: 162.5%;
+}
+
 .header__menu {
   display: flex;
   justify-content: center;
@@ -471,14 +495,34 @@ For example header__container, main__container etc.
   }
 }
 
-@supports (margin-top: clamp( 1.25rem , calc(-0.5082417582rem + 8.7912087912vw) , 6.25rem )) {
+@supports (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
   .page__hero-block {
-    margin-top: clamp( 1.25rem , calc(-0.5082417582rem + 8.7912087912vw) , 6.25rem );
+    margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
   }
 }
-@supports not (margin-top: clamp( 1.25rem , calc(-0.5082417582rem + 8.7912087912vw) , 6.25rem )) {
+@supports not (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
   .page__hero-block {
-    margin-top: calc(1.25rem + 5 * (100vw - 20rem) / 56.875);
+    margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__category {
+    margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
+  }
+}
+@supports not (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__category {
+    margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__category {
+    margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
+  }
+}
+@supports not (margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__category {
+    margin-bottom: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
 
@@ -573,6 +617,32 @@ For example header__container, main__container etc.
 @media (max-width: 43.75rem) {
   .hero-block__image {
     display: none;
+  }
+}
+
+.category__content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@supports (gap: clamp( 0.9375rem , calc(0.6078296703rem + 1.6483516484vw) , 1.875rem )) {
+  .category__content {
+    gap: clamp( 0.9375rem , calc(0.6078296703rem + 1.6483516484vw) , 1.875rem );
+  }
+}
+@supports not (gap: clamp( 0.9375rem , calc(0.6078296703rem + 1.6483516484vw) , 1.875rem )) {
+  .category__content {
+    gap: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (margin-top: clamp( 2.1875rem , calc(1.4182692308rem + 3.8461538462vw) , 4.375rem )) {
+  .category__content {
+    margin-top: clamp( 2.1875rem , calc(1.4182692308rem + 3.8461538462vw) , 4.375rem );
+  }
+}
+@supports not (margin-top: clamp( 2.1875rem , calc(1.4182692308rem + 3.8461538462vw) , 4.375rem )) {
+  .category__content {
+    margin-top: calc(2.1875rem + 2.1875 * (100vw - 20rem) / 56.875);
   }
 }
 

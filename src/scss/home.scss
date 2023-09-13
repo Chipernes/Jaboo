@@ -1,7 +1,12 @@
 //====================================================================================================
 .page {
   &__hero-block {
-    @include adaptiveValue("margin-top", 100, 20);
+    @include adaptiveValue("margin-top", 100, 50);
+  }
+
+  &__category {
+    @include adaptiveValue("margin-top", 100, 50);
+    @include adaptiveValue("margin-bottom", 100, 50);
   }
 }
 
@@ -117,6 +122,25 @@
     @media (max-width: rem(700)) {
       display: none;
     }
+  }
+}
+
+.category {
+  &__container {
+  }
+
+  &__block-heading {
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include adaptiveValue("gap", 30, 15);
+    @include adaptiveValue("margin-top", 70, 35);
+  }
+
+  &__card {
   }
 }
 

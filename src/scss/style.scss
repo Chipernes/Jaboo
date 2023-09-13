@@ -31,7 +31,7 @@ $mainColor: #5E6282; // Default font color
   @include adaptiveValue("font-size", 32, 26); //32px
 }
 @mixin h4-font-size {
-  @include adaptiveValue("font-size", 20, 8); //20px
+  @include adaptiveValue("font-size", 20, 18); //20px
 }
 @mixin h5-font-size {
   @include adaptiveValue("font-size", 18, 16); //18px
@@ -60,6 +60,7 @@ $mainColor: #5E6282; // Default font color
   --black-color: #000000;
 
   --primary-1: #F1A501;
+  --primary-1-hover: #d99603;
   --primary-2: #8A79DF;
 
   --button-gradient: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);

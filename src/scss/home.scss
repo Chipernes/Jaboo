@@ -7,6 +7,10 @@
 
   &__category {
     @include adaptiveValue("margin-top", 100, 50);
+  }
+
+  &__selling {
+    @include adaptiveValue("margin-top", 100, 50);
     @include adaptiveValue("margin-bottom", 100, 50);
   }
 }
@@ -136,4 +140,73 @@
   }
 }
 
+.selling {
+  &__container {
+  }
+
+  &__block-heading {
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptiveValue("gap", 30, 15);
+    @include adaptiveValue("margin-top", 60, 30);
+  }
+
+  &__card {
+  }
+}
+
+.card-selling {
+  flex: 1 1 auto;
+
+  position: relative;
+
+  max-width: rem(450);
+  margin: 0 auto;
+
+  border-radius: rem(24);
+  overflow: hidden;
+  box-shadow: 0 rem(5) rem(10) var(--addition-color-2);
+
+  &__image {
+    & img {
+      width: 100%;
+      max-height: rem(400);
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: rem(28) rem(20);
+
+    font-size: var(--h5-font-size);
+    font-weight: 500;
+
+    background-color: var(--white-color);
+  }
+
+  &__destination {
+
+  }
+
+  &__duration {
+    margin-top: rem(20);
+    font-size: var(--h6-font-size);
+  }
+
+  &__price {
+  }
+}
 //====================================================================================================

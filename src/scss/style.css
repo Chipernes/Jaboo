@@ -529,13 +529,23 @@ For example header__container, main__container etc.
     margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
+@supports (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__selling {
+    margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
+  }
+}
+@supports not (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__selling {
+    margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
+  }
+}
 @supports (margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
-  .page__category {
+  .page__selling {
     margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
   }
 }
 @supports not (margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
-  .page__category {
+  .page__selling {
     margin-bottom: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
@@ -666,6 +676,63 @@ For example header__container, main__container etc.
   .category__content {
     margin-top: calc(2.1875rem + 2.1875 * (100vw - 20rem) / 56.875);
   }
+}
+.selling__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@supports (gap: clamp( 0.9375rem , calc(0.6078296703rem + 1.6483516484vw) , 1.875rem )) {
+  .selling__content {
+    gap: clamp( 0.9375rem , calc(0.6078296703rem + 1.6483516484vw) , 1.875rem );
+  }
+}
+@supports not (gap: clamp( 0.9375rem , calc(0.6078296703rem + 1.6483516484vw) , 1.875rem )) {
+  .selling__content {
+    gap: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (margin-top: clamp( 1.875rem , calc(1.2156593407rem + 3.2967032967vw) , 3.75rem )) {
+  .selling__content {
+    margin-top: clamp( 1.875rem , calc(1.2156593407rem + 3.2967032967vw) , 3.75rem );
+  }
+}
+@supports not (margin-top: clamp( 1.875rem , calc(1.2156593407rem + 3.2967032967vw) , 3.75rem )) {
+  .selling__content {
+    margin-top: calc(1.875rem + 1.875 * (100vw - 20rem) / 56.875);
+  }
+}
+.card-selling {
+  flex: 1 1 auto;
+  position: relative;
+  max-width: 28.125rem;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.3125rem 0.625rem var(--addition-color-2);
+}
+.card-selling__image img {
+  width: 100%;
+  max-height: 25rem;
+  object-fit: cover;
+}
+.card-selling__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1.75rem 1.25rem;
+  font-size: var(--h5-font-size);
+  font-weight: 500;
+  background-color: var(--white-color);
+}
+.card-selling__duration {
+  margin-top: 1.25rem;
+  font-size: var(--h6-font-size);
 }
 
 /*# sourceMappingURL=style.css.map */

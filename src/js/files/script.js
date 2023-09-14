@@ -34,9 +34,7 @@ function checkWidth() {
 
 // Fixed header
 const header = document.querySelector('.header');
-const page = document.querySelector('.page');
 
-page.style.marginTop = header.offsetHeight + 'px';
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > header.offsetHeight) {
         header.classList.add('header_fixed');

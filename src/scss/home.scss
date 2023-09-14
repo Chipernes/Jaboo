@@ -1,7 +1,8 @@
 //====================================================================================================
 .page {
+  @include adaptiveValue("margin-top", 200, 100);
+
   &__hero-block {
-    @include adaptiveValue("margin-top", 100, 50);
   }
 
   &__category {
@@ -15,11 +16,9 @@
   }
 
   &__inner {
-    position: relative;
-
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     @media (max-width: rem(500)) {
       flex-direction: column;
@@ -27,17 +26,17 @@
   }
 
   &__content {
-    flex: 1 1 50%;
+    @media (min-width: rem(730)) {
+      width: 50%;
+    }
   }
 
   &__block-heading {
-    width: 100%;
-    max-width: rem(545);
   }
 
   &__text {
-    max-width: rem(480);
-    margin: rem(30) 0 rem(35) 0;
+    @include adaptiveValue("margin-top", 30, 15);
+    @include adaptiveValue("margin-bottom", 35, 20);
 
     line-height: 187.5%;
   }
@@ -55,6 +54,8 @@
   }
 
   &-button {
+    flex-shrink: 0;
+
     @media (max-width: rem(425)) {
       &, & a {
         width: 100%;
@@ -63,6 +64,8 @@
   }
 
   &__play {
+    flex-shrink: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,22 +107,11 @@
   &__image {
     width: 50%;
 
-    position: absolute;
-    top: 50%;
-    right: 0;
-    z-index: -1;
-    transform: translateY(-50%);
-
     & img {
       width: 100%;
     }
 
-    @media (max-width: rem(770)) {
-      top: 38%;
-      transform: initial;
-    }
-
-    @media (max-width: rem(700)) {
+    @media (max-width: rem(730)) {
       display: none;
     }
   }

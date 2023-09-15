@@ -11,6 +11,10 @@
 
   &__selling {
     @include adaptiveValue("margin-top", 100, 50);
+  }
+
+  &__booking {
+    @include adaptiveValue("margin-top", 100, 50);
     @include adaptiveValue("margin-bottom", 100, 50);
   }
 }
@@ -160,53 +164,46 @@
   }
 }
 
-.card-selling {
-  flex: 1 1 auto;
+.booking {
+  &__container {
+  }
 
-  position: relative;
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(30);
 
-  max-width: rem(450);
-  margin: 0 auto;
-
-  border-radius: rem(24);
-  overflow: hidden;
-  box-shadow: 0 rem(5) rem(10) var(--addition-color-2);
-
-  &__image {
-    & img {
-      width: 100%;
-      max-height: rem(400);
-      object-fit: cover;
+    @media (max-width: rem(700)) {
+      flex-wrap: wrap;
     }
   }
 
-  &__info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  &__content {
+    flex: 1 1 auto;
+  }
 
+  &__block-heading {
+    max-width: rem(510);
+
+    @media (max-width: rem(700)) {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__steps {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    padding: rem(28) rem(20);
+    @include adaptiveValue("gap", 48, 15);
+    margin-top: rem(30);
 
-    font-size: var(--h5-font-size);
-    font-weight: 500;
-
-    background-color: var(--white-color);
-  }
-
-  &__destination {
-
-  }
-
-  &__duration {
-    margin-top: rem(20);
-    font-size: var(--h6-font-size);
-  }
-
-  &__price {
+    @media (max-width: rem(700)) {
+      align-items: center;
+    }
   }
 }
+
+
 //====================================================================================================

@@ -131,7 +131,6 @@ For example header__container, main__container etc.
 
 .block-heading__subtitle {
   font-weight: 600;
-  text-align: left;
   text-transform: uppercase;
 }
 @supports (font-size: clamp( 1rem , calc(0.956043956rem + 0.2197802198vw) , 1.125rem )) {
@@ -246,6 +245,58 @@ For example header__container, main__container etc.
   line-height: 162.5%;
 }
 
+.card-selling {
+  flex: 1 1 auto;
+  position: relative;
+  max-width: 28.125rem;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.3125rem 0.625rem var(--addition-color-2);
+}
+.card-selling__image img {
+  width: 100%;
+  max-height: 25rem;
+  object-fit: cover;
+}
+.card-selling__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1.75rem 1.25rem;
+  font-size: var(--h5-font-size);
+  font-weight: 500;
+  background-color: var(--white-color);
+}
+.card-selling__duration {
+  margin-top: 1.25rem;
+  font-size: var(--h6-font-size);
+}
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.step__icon svg {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+}
+.step__info {
+  line-height: 124.5%;
+}
+.step__title {
+  margin-top: 0.25rem;
+  font-weight: 700;
+}
+.step__text {
+  max-width: 21.875rem;
+}
 .header {
   position: fixed;
   top: 0;
@@ -539,13 +590,23 @@ For example header__container, main__container etc.
     margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
+@supports (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__booking {
+    margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
+  }
+}
+@supports not (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__booking {
+    margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
+  }
+}
 @supports (margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
-  .page__selling {
+  .page__booking {
     margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
   }
 }
 @supports not (margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
-  .page__selling {
+  .page__booking {
     margin-bottom: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
@@ -703,36 +764,49 @@ For example header__container, main__container etc.
     margin-top: calc(1.875rem + 1.875 * (100vw - 20rem) / 56.875);
   }
 }
-.card-selling {
-  flex: 1 1 auto;
-  position: relative;
-  max-width: 28.125rem;
-  margin: 0 auto;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  box-shadow: 0 0.3125rem 0.625rem var(--addition-color-2);
-}
-.card-selling__image img {
-  width: 100%;
-  max-height: 25rem;
-  object-fit: cover;
-}
-.card-selling__info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.booking__inner {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  padding: 1.75rem 1.25rem;
-  font-size: var(--h5-font-size);
-  font-weight: 500;
-  background-color: var(--white-color);
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
 }
-.card-selling__duration {
-  margin-top: 1.25rem;
-  font-size: var(--h6-font-size);
+@media (max-width: 43.75rem) {
+  .booking__inner {
+    flex-wrap: wrap;
+  }
+}
+.booking__content {
+  flex: 1 1 auto;
+}
+.booking__block-heading {
+  max-width: 31.875rem;
+}
+@media (max-width: 43.75rem) {
+  .booking__block-heading {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+.booking__steps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.875rem;
+}
+@supports (gap: clamp( 0.9375rem , calc(0.2122252747rem + 3.6263736264vw) , 3rem )) {
+  .booking__steps {
+    gap: clamp( 0.9375rem , calc(0.2122252747rem + 3.6263736264vw) , 3rem );
+  }
+}
+@supports not (gap: clamp( 0.9375rem , calc(0.2122252747rem + 3.6263736264vw) , 3rem )) {
+  .booking__steps {
+    gap: calc(0.9375rem + 2.0625 * (100vw - 20rem) / 56.875);
+  }
+}
+@media (max-width: 43.75rem) {
+  .booking__steps {
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

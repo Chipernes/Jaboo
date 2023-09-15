@@ -253,11 +253,21 @@ For example header__container, main__container etc.
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0 0.3125rem 0.625rem var(--addition-color-2);
+  transition: all 0.3s ease 0s;
 }
 .card-selling__image img {
   width: 100%;
   max-height: 25rem;
   object-fit: cover;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .card-selling:hover {
+    transform: scale(1.05);
+  }
+  .card-selling:hover img {
+    transform: scale(1.1);
+  }
 }
 .card-selling__info {
   position: absolute;

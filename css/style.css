@@ -144,7 +144,6 @@ For example header__container, main__container etc.
 
 .block-heading__subtitle {
   font-weight: 600;
-  text-align: left;
   text-transform: uppercase;
 }
 
@@ -203,7 +202,7 @@ For example header__container, main__container etc.
 
 .block-heading__title_display {
   margin-top: 1.5rem;
-  line-height: 105%;
+  line-height: 120%;
   letter-spacing: -3.36px;
   text-transform: initial;
   color: var(--display-title-color);
@@ -281,6 +280,88 @@ For example header__container, main__container etc.
   text-align: center;
   font-weight: 500;
   line-height: 162.5%;
+}
+
+.card-selling {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  position: relative;
+  max-width: 28.125rem;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem var(--addition-color-2);
+          box-shadow: 0 0.3125rem 0.625rem var(--addition-color-2);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.card-selling__image img {
+  width: 100%;
+  max-height: 25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.card-selling__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  padding: 1.75rem 1.25rem;
+  font-size: var(--h5-font-size);
+  font-weight: 500;
+  background-color: var(--white-color);
+}
+
+.card-selling__duration {
+  margin-top: 1.25rem;
+  font-size: var(--h6-font-size);
+}
+
+.step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.step__icon svg {
+  width: 3rem;
+  height: 3rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.step__info {
+  line-height: 124.5%;
+}
+
+.step__title {
+  margin-top: 0.25rem;
+  font-weight: 700;
+}
+
+.step__text {
+  max-width: 21.875rem;
 }
 
 .header {
@@ -486,70 +567,104 @@ For example header__container, main__container etc.
   display: none;
 }
 
+@supports (margin-top: clamp(6.25rem, calc(4.0521978022rem + 10.989010989vw), 12.5rem)) {
+  .page {
+    margin-top: clamp(6.25rem, calc(4.0521978022rem + 10.989010989vw), 12.5rem);
+  }
+}
+
+@supports not (margin-top: clamp(6.25rem, calc(4.0521978022rem + 10.989010989vw), 12.5rem)) {
+  .page {
+    margin-top: calc(6.25rem + 6.25 * (100vw - 20rem) / 56.875);
+  }
+}
+
 @supports (margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem)) {
-  .page__hero-block {
+  .page__category {
     margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem);
   }
 }
 
 @supports not (margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem)) {
-  .page__hero-block {
+  .page__category {
     margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
 
 @supports (margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem)) {
-  .page__category {
+  .page__selling {
     margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem);
   }
 }
 
 @supports not (margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem)) {
-  .page__category {
+  .page__selling {
+    margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
+  }
+}
+
+@supports (margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem)) {
+  .page__booking {
+    margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem);
+  }
+}
+
+@supports not (margin-top: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem)) {
+  .page__booking {
     margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
 
 @supports (margin-bottom: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem)) {
-  .page__category {
+  .page__booking {
     margin-bottom: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem);
   }
 }
 
 @supports not (margin-bottom: clamp(3.125rem, calc(2.0260989011rem + 5.4945054945vw), 6.25rem)) {
-  .page__category {
+  .page__booking {
     margin-bottom: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
 
 .hero-block__inner {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.hero-block__content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
-}
-
-.hero-block__block-heading {
-  width: 100%;
-  max-width: 34.0625rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .hero-block__text {
-  max-width: 30rem;
-  margin: 1.875rem 0 2.1875rem 0;
   line-height: 187.5%;
+}
+
+@supports (margin-top: clamp(0.9375rem, calc(0.6078296703rem + 1.6483516484vw), 1.875rem)) {
+  .hero-block__text {
+    margin-top: clamp(0.9375rem, calc(0.6078296703rem + 1.6483516484vw), 1.875rem);
+  }
+}
+
+@supports not (margin-top: clamp(0.9375rem, calc(0.6078296703rem + 1.6483516484vw), 1.875rem)) {
+  .hero-block__text {
+    margin-top: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
+}
+
+@supports (margin-bottom: clamp(1.25rem, calc(0.9203296703rem + 1.6483516484vw), 2.1875rem)) {
+  .hero-block__text {
+    margin-bottom: clamp(1.25rem, calc(0.9203296703rem + 1.6483516484vw), 2.1875rem);
+  }
+}
+
+@supports not (margin-bottom: clamp(1.25rem, calc(0.9203296703rem + 1.6483516484vw), 2.1875rem)) {
+  .hero-block__text {
+    margin-bottom: calc(1.25rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
 }
 
 .hero-block__links {
@@ -565,7 +680,14 @@ For example header__container, main__container etc.
   gap: 2.8125rem;
 }
 
+.hero-block-button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 .hero-block__play {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -606,13 +728,6 @@ For example header__container, main__container etc.
 
 .hero-block__image {
   width: 50%;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  z-index: -1;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .hero-block__image img {
@@ -654,20 +769,104 @@ For example header__container, main__container etc.
   }
 }
 
+.selling__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@supports (gap: clamp(0.9375rem, calc(0.6078296703rem + 1.6483516484vw), 1.875rem)) {
+  .selling__content {
+    gap: clamp(0.9375rem, calc(0.6078296703rem + 1.6483516484vw), 1.875rem);
+  }
+}
+
+@supports not (gap: clamp(0.9375rem, calc(0.6078296703rem + 1.6483516484vw), 1.875rem)) {
+  .selling__content {
+    gap: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
+}
+
+@supports (margin-top: clamp(1.875rem, calc(1.2156593407rem + 3.2967032967vw), 3.75rem)) {
+  .selling__content {
+    margin-top: clamp(1.875rem, calc(1.2156593407rem + 3.2967032967vw), 3.75rem);
+  }
+}
+
+@supports not (margin-top: clamp(1.875rem, calc(1.2156593407rem + 3.2967032967vw), 3.75rem)) {
+  .selling__content {
+    margin-top: calc(1.875rem + 1.875 * (100vw - 20rem) / 56.875);
+  }
+}
+
+.booking__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.875rem;
+}
+
+.booking__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.booking__block-heading {
+  max-width: 31.875rem;
+}
+
+.booking__steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 1.875rem;
+}
+
+@supports (gap: clamp(0.9375rem, calc(0.2122252747rem + 3.6263736264vw), 3rem)) {
+  .booking__steps {
+    gap: clamp(0.9375rem, calc(0.2122252747rem + 3.6263736264vw), 3rem);
+  }
+}
+
+@supports not (gap: clamp(0.9375rem, calc(0.2122252747rem + 3.6263736264vw), 3rem)) {
+  .booking__steps {
+    gap: calc(0.9375rem + 2.0625 * (100vw - 20rem) / 56.875);
+  }
+}
+
+@media (min-width: 45.625rem) {
+  .hero-block__content {
+    width: 50%;
+  }
+}
+
 @media (max-width: 48em) {
   .menu__list {
     -webkit-column-gap: inherit;
        -moz-column-gap: inherit;
             column-gap: inherit;
-  }
-}
-
-@media (max-width: 48.125rem) {
-  .hero-block__image {
-    top: 38%;
-    -webkit-transform: initial;
-        -ms-transform: initial;
-            transform: initial;
   }
 }
 
@@ -781,9 +980,27 @@ For example header__container, main__container etc.
   }
 }
 
-@media (max-width: 43.75rem) {
+@media (max-width: 45.625rem) {
   .hero-block__image {
     display: none;
+  }
+}
+
+@media (max-width: 43.75rem) {
+  .booking__inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .booking__block-heading {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .booking__steps {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -838,6 +1055,18 @@ For example header__container, main__container etc.
 @media (any-hover: hover) {
   .button:hover {
     background: var(--primary-1-hover);
+  }
+
+  .card-selling:hover {
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+
+  .card-selling:hover img {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
   }
 
   .menu__link:hover::after {

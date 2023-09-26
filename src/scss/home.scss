@@ -15,6 +15,10 @@
 
   &__booking {
     @include adaptiveValue("margin-top", 100, 50);
+  }
+
+  &__testimonials {
+    @include adaptiveValue("margin-top", 100, 50);
     @include adaptiveValue("margin-bottom", 100, 50);
   }
 }
@@ -205,5 +209,132 @@
   }
 }
 
+.testimonials {
+  &__container  {
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(30);
+    
+    @media (max-width: rem(1000)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin-right: auto;
+    @media (max-width: rem(1000)) {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__block-heading {
+    max-width: rem(400);
+    @include adaptiveValue("margin-bottom", 80, 30);
+  }
+
+  &__swiper {
+    margin: initial;
+    @include adaptiveValue("padding", 60, 30);
+  }
+
+  &__swiper-wrapper {
+    width: rem(500);
+
+    @media (max-width: rem(650)) {
+      @include adaptiveValue("width", 500, 260, 650, 320);
+    }
+  }
+
+  &__swiper-slide {
+    height: initial;
+    position: relative;
+
+    padding-top: rem(35);
+    @include adaptiveValue("padding-right", 68, 15);
+    @include adaptiveValue("padding-bottom", 34, 15);
+    @include adaptiveValue("padding-left", 34, 15);
+
+    overflow: initial !important;
+    border-radius: rem(10);
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px var(--black-color);
+  }
+
+  &__swiper-pagination {
+    position: initial;
+    display: flex;
+    flex-direction: row;
+    gap: rem(25);
+
+    & span {
+      width: rem(12);
+      height: rem(12);
+
+      background-color: var(--title-color);
+    }
+    
+    @media (max-width: rem(1000)) {
+      justify-content: center;
+    }
+  }
+
+  &__swiper-button-prev,
+  &__swiper-button-next {
+    &::after {
+      font-size: rem(14);
+      color: var(--title-color);
+    }
+
+    &[aria-disabled="false"] {
+      font-weight: 700;
+    }
+  }
+
+  &__swiper-button-prev {
+    left: 0;
+  }
+
+  &__swiper-button-next {
+    right: 0;
+  }
+
+  &__photo {
+    position: absolute;
+    top: rem(-25);
+    left: rem(-25);
+    z-index: 2;
+
+    width: rem(68);
+    height: rem(68);
+
+    border-radius: 50%;
+  }
+
+  &__comment {
+    max-width: rem(400);
+    margin-bottom: rem(34);
+
+    font-weight: 500;
+    line-height: 200%;
+  }
+
+  &__user {
+    margin-bottom: rem(5);
+
+    font-size: var(--h5-font-size);
+    font-weight: 600;
+  }
+
+  &__indo {
+    font-size: var(--addition-small-font);
+    font-weight: 500;
+  }
+}
 
 //====================================================================================================

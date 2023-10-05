@@ -620,13 +620,23 @@ For example header__container, main__container etc.
     margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
+@supports (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__sponsors {
+    margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
+  }
+}
+@supports not (margin-top: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
+  .page__sponsors {
+    margin-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
+  }
+}
 @supports (margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
-  .page__testimonials {
+  .page__sponsors {
     margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem );
   }
 }
 @supports not (margin-bottom: clamp( 3.125rem , calc(2.0260989011rem + 5.4945054945vw) , 6.25rem )) {
-  .page__testimonials {
+  .page__sponsors {
     margin-bottom: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
   }
 }
@@ -987,6 +997,31 @@ For example header__container, main__container etc.
 .testimonials__indo {
   font-size: var(--addition-small-font);
   font-weight: 500;
+}
+
+.sponsors__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9375rem;
+}
+.sponsors__link {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13.75rem;
+  height: 5.375rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 3px 5px var(--addition-color-2);
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .sponsors__link:hover {
+    transform: translateY(-0.625rem);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,6 +19,10 @@
 
   &__testimonials {
     @include adaptiveValue("margin-top", 100, 50);
+  }
+
+  &__sponsors {
+    @include adaptiveValue("margin-top", 100, 50);
     @include adaptiveValue("margin-bottom", 100, 50);
   }
 }
@@ -334,6 +338,47 @@
   &__indo {
     font-size: var(--addition-small-font);
     font-weight: 500;
+  }
+}
+
+.sponsors {
+  &__container {
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(15);
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(220);
+    height: rem(86);
+
+    border-radius: rem(12);
+    box-shadow: 0 3px 5px var(--addition-color-2);
+
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translateY(rem(-10));
+      }
+    }
+  }
+
+  &__image {
   }
 }
 

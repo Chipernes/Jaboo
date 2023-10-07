@@ -50,11 +50,22 @@
   &_primary-1 {
     border-radius: 10px;
     background: var(--primary-1);
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: var(--primary-1-hover);
+      }
+    }
   }
 
-  @media (any-hover: hover) {
-    &:hover {
-      background: var(--primary-1-hover);
+  &_primary-2 {
+    border-radius: 10px;
+    background: var(--button-gradient);
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: var(--hover-button-gradient);
+      }
     }
   }
 

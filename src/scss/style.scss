@@ -27,7 +27,7 @@ $mainColor: #5E6282; // Default font color
 @mixin h2-font-size {
   @include adaptiveValue("font-size", 50, 32); //50px
 }
-@mixin h3-font-siz {
+@mixin h3-font-size {
   @include adaptiveValue("font-size", 32, 26); //32px
 }
 @mixin h4-font-size {
@@ -64,6 +64,7 @@ $mainColor: #5E6282; // Default font color
   --primary-2: #8A79DF;
 
   --button-gradient: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);
+  --hover-button-gradient: linear-gradient(180deg, #f56a38 0%, #f65238 100%);
   --hover-socials-gradient: conic-gradient(from 180deg at 50% 50%, #B8D2F1 0deg, #F289AA 60.00000178813934deg, #C68BF0 106.09081864356995deg, #D164DA 153.7500035762787deg, #C963E8 221.24999284744263deg, #BFC2E8 258.75deg, #FFC999 288.7499928474426deg, #D0D8C9 315deg, #BAD0F1 334.13365602493286deg, #CED8CB 358.9677572250366deg, rgba(255, 255, 255, 0.00) 360deg);
 
   --display-title-color: #181E4B;

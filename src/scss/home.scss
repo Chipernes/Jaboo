@@ -23,6 +23,10 @@
 
   &__sponsors {
     @include adaptiveValue("margin-top", 100, 50);
+  }
+
+  &__feedback {
+    @include adaptiveValue("margin-top", 100, 50);
     @include adaptiveValue("margin-bottom", 100, 50);
   }
 }
@@ -379,6 +383,133 @@
   }
 
   &__image {
+  }
+}
+
+.feedback {
+  &__container {
+    position: relative;
+    padding: 0;
+  }
+
+  &__image {
+    position: relative;
+
+    & img {
+      width: 100%;
+      @include adaptiveValue("min-height", 400, 440);
+      object-fit: cover;
+    }
+  }
+
+  &__social {
+    position: absolute;
+    top: rem(-15);
+    right: rem(-20);
+    width: rem(70);
+    height: rem(70);
+    
+    @media (max-width: rem(1300)) {
+      display: none;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    max-width: rem(910);
+    padding: 0 rem(15);
+  }
+
+  &__block-heading {
+  }
+
+  &__block-heading__title {
+    @include h3-font-size;
+    font-family: var(--text-font);
+    line-height: 164%;
+    font-weight: 600;
+    color: var(--text-color);
+
+    text-transform: none;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(24);
+    @include adaptiveValue('margin-top', 74, 30);
+    padding: 0 rem(15);
+    
+    @media (max-width: rem(600)) {
+      flex-direction: column;
+    }
+  }
+
+  &__label {
+    position: relative;
+
+    width: 100%;
+    max-width: rem(420);
+
+    @media (max-width: rem(600)) {
+      max-width: 100%;
+    }
+  }
+
+  &__mail {
+    position: absolute;
+    top: 50%;
+    left: rem(30);
+    transform: translateY(-50%);
+
+    width: rem(21);
+    height: rem(18);
+  }
+
+  &__input {
+    width: 100%;
+    height: rem(68);
+    padding: 0 rem(25) 0 rem(66);
+
+    background: var(--white-color);
+    border-radius: rem(10);
+
+    outline: none;
+
+    &::placeholder {
+      transition: all 0.3s ease 0s;
+    }
+
+    &:focus::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  &__button {
+    height: rem(68);
+
+    & a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: rem(22) rem(50);
+    }
+
+    @media (max-width: rem(600)) {
+      flex: 1 1 auto;
+      width: 100%;
+
+      & a {
+        justify-content: center;
+      }
+    }
   }
 }
 

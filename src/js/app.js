@@ -10,4 +10,5 @@ flsFunctions.isWebp();
 // Include files with your code
 import './modules/popup.js';
 import './modules/swiper.js';
+import './modules/animations.js';
 import "./files/script.js";

@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header lock-padding">
   <div class="header__container">
     <div class="header__menu menu">
       <div class="menu__body">
@@ -17,13 +17,20 @@
         </ul>
 
         <ul class="menu__personalisation">
-          <li class="menu__popup"><a class="menu__popup-link menu__link" href="#popup_login ">Login</a></li>
-          <li class="menu__popup"><a class="menu__popup-link" href="#popup_sing-up">Sign up</a></li>
-          <li class="menu__popup menu__spoiler">
+          <li class="menu__popup"><a class="menu__popup-link menu__link popup-link" href="#popup_login">Login</a></li>
+          <li class="menu__popup"><a class="menu__popup-link popup-link" href="#popup_sing-up">Sign up</a></li>
+          <li class="menu__popup menu__spoiler spoiler">
             <p class="menu__popup-link">EN</p>
             <svg>
               <use xlink:href="img/sprite.svg#arrow"></use>
             </svg>
+            <div class="spoiler__body">
+              <ul class="spoiler__list">
+                <li class="spoiler__item">UA</li>
+                <li class="spoiler__item">FR</li>
+                <li class="spoiler__item">GR</li>
+              </ul>
+            </div>
           </li>
         </ul>
 
@@ -31,6 +38,25 @@
 
       <!-- Burger -->
       <button class="icon-menu" type="button"><span></span></button>
+    </div>
+  </div>
+  <div class="popup" id="popup_login">
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="#" class="popup__close close-popup">X</a>
+        <div class="popup__title">LOGIN</div>
+        <div class="popup__text">Some login, that designer did not give us!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="popup_sing-up">
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="#" class="popup__close close-popup">X</a>
+        <div class="popup__title">REGISTRATION</div>
+        <div class="popup__text">Some registration, than designer did not give us!</div>
+      </div>
     </div>
   </div>
 </header>

@@ -323,7 +323,7 @@ For example header__container, main__container etc.
   left: 0;
   z-index: 4;
   width: 100%;
-  transition: all 0.3s ease 0s;
+  transition: padding-top 0.3s, padding-bottom 0.3s ease 0s;
 }
 @supports (padding-top: clamp( 1.25rem , calc(0.7005494505rem + 2.7472527473vw) , 2.8125rem )) {
   .header {
@@ -348,7 +348,7 @@ For example header__container, main__container etc.
 .header.header_fixed {
   background-color: var(--white-color);
   padding: 0.9375rem 0;
-  box-shadow: 0 0 10px var(--black-color);
+  box-shadow: 0 0 0.625rem var(--black-color);
 }
 .header__menu {
   display: flex;
@@ -510,6 +510,7 @@ For example header__container, main__container etc.
   }
 }
 .menu__spoiler {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -524,12 +525,50 @@ For example header__container, main__container etc.
   width: 0.5625rem;
   height: 0.28125rem;
   stroke: var(--nav-color);
+  transition: all 0.3s ease 0s;
 }
 @media (max-width: 26.5625rem) {
   .menu-open .menu__spoiler svg {
     width: 1.125rem;
     height: 0.5625rem;
     stroke: var(--white-color);
+  }
+}
+.menu__spoiler.active svg {
+  transform: rotate(180deg);
+}
+
+.spoiler {
+  width: 2.5rem;
+}
+.spoiler__body {
+  position: absolute;
+  top: 100%;
+  left: -50%;
+  transform: translateX(25%);
+  padding: 0.625rem 0.9375rem;
+  background-color: var(--white-color);
+  border-radius: 0.625rem;
+  box-shadow: 0 0 10px var(--addition-color-2);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+.spoiler.active .spoiler__body {
+  opacity: 1;
+  top: 150%;
+}
+.spoiler__item {
+  font-family: var(--selected-font);
+  font-weight: 700;
+  color: var(--nav-color);
+}
+.spoiler__item:not(:last-child) {
+  margin-bottom: 0.3125rem;
+}
+@media (max-width: 26.5625rem) {
+  .menu-open .spoiler__item {
+    font-size: var(--h4-font-size);
+    color: var(--white-color);
   }
 }
 
@@ -580,6 +619,43 @@ For example header__container, main__container etc.
   }
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+.popup__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 1.875rem 0.625rem;
+}
+.popup__content {
+  position: relative;
+  max-width: 50rem;
+  padding: 1.875rem;
+  color: var(--black-color);
+  background-color: var(--white-color);
+  border-radius: 0.9375rem;
+}
+.popup__close {
+  position: absolute;
+  top: 0.9375rem;
+  right: 0.9375rem;
+  color: var(--black-color);
+}
 @supports (margin-bottom: clamp( 1.25rem , calc(-0.0686813187rem + 6.5934065934vw) , 5rem )) {
   .footer {
     margin-bottom: clamp( 1.25rem , calc(-0.0686813187rem + 6.5934065934vw) , 5rem );

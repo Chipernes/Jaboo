@@ -9,13 +9,13 @@
   @include adaptiveValue("padding-top", 45, 20);
   @include adaptiveValue("padding-bottom", 45, 20);
 
-  transition: all 0.3s ease 0s;
+  transition: padding-top 0.3s, padding-bottom 0.3s ease 0s;
 
   &.header_fixed {
     background-color: var(--white-color);
     padding: rem(15) 0;
 
-    box-shadow: 0 0 10px var(--black-color);
+    box-shadow: 0 0 rem(10) var(--black-color);
   }
 
   &__container {
@@ -186,6 +186,8 @@
   }
 
   &__spoiler {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,6 +205,8 @@
 
       stroke: var(--nav-color);
 
+      transition: all 0.3s ease 0s;
+
       .menu-open & {
         @media (max-width: rem(425)) {
           width: rem(18);
@@ -210,6 +214,55 @@
 
           stroke: var(--white-color);
         }
+      }
+    }
+
+    &.active svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.spoiler {
+  width: rem(40);
+
+  &__body {
+    position: absolute;
+    top: 100%;
+    left: -50%;
+    transform: translateX(25%);
+
+    padding: rem(10) rem(15);
+
+    background-color: var(--white-color);
+    border-radius: rem(10);
+    box-shadow: 0 0 10px var(--addition-color-2);
+
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  &.active &__body {
+    opacity: 1;
+    top: 150%;
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+    }
+
+    font-family: var(--selected-font);
+    font-weight: 700;
+    color: var(--nav-color);
+
+    .menu-open & {
+      @media (max-width: rem(425)) {
+        font-size: var(--h4-font-size);
+        color: var(--white-color);
       }
     }
   }
@@ -267,6 +320,62 @@
         transform: rotate(45deg);
       }
     }
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100%;
+    padding: rem(30) rem(10);
+  }
+
+  &__content {
+    position: relative;
+
+    max-width: rem(800);
+    padding: rem(30);
+
+    color: var(--black-color);
+
+    background-color: var(--white-color);
+    border-radius: rem(15);
+  }
+
+  &__close {
+    position: absolute;
+    top: rem(15);
+    right: rem(15);
+
+    color: var(--black-color);
+  }
+
+  &__title {
+  }
+
+  &__text {
   }
 }
 //====================================================================================================

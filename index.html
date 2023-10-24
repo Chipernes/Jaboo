@@ -5,13 +5,14 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.min.css?_v=20230915234354">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css?_v=20231024103123"/>
+  <link rel="stylesheet" href="css/style.min.css?_v=20231024103123">
   <link rel="shortcut icon" href="favicon.ico">
   <title>Jadoo - Your way of traveling</title>
 </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+      <header class="header lock-padding">
   <div class="header__container">
     <div class="header__menu menu">
       <div class="menu__body">
@@ -30,13 +31,20 @@
         </ul>
 
         <ul class="menu__personalisation">
-          <li class="menu__popup"><a class="menu__popup-link menu__link" href="#popup_login ">Login</a></li>
-          <li class="menu__popup"><a class="menu__popup-link" href="#popup_sing-up">Sign up</a></li>
-          <li class="menu__popup menu__spoiler">
+          <li class="menu__popup"><a class="menu__popup-link menu__link popup-link" href="#popup_login">Login</a></li>
+          <li class="menu__popup"><a class="menu__popup-link popup-link" href="#popup_sing-up">Sign up</a></li>
+          <li class="menu__popup menu__spoiler spoiler">
             <p class="menu__popup-link">EN</p>
             <svg>
               <use xlink:href="img/sprite.svg#arrow"></use>
             </svg>
+            <div class="spoiler__body">
+              <ul class="spoiler__list">
+                <li class="spoiler__item">UA</li>
+                <li class="spoiler__item">FR</li>
+                <li class="spoiler__item">GR</li>
+              </ul>
+            </div>
           </li>
         </ul>
 
@@ -44,6 +52,25 @@
 
       <!-- Burger -->
       <button class="icon-menu" type="button"><span></span></button>
+    </div>
+  </div>
+  <div class="popup" id="popup_login">
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="#" class="popup__close close-popup">X</a>
+        <div class="popup__title">LOGIN</div>
+        <div class="popup__text">Some login, that designer did not give us!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="popup_sing-up">
+    <div class="popup__body">
+      <div class="popup__content">
+        <a href="#" class="popup__close close-popup">X</a>
+        <div class="popup__title">REGISTRATION</div>
+        <div class="popup__text">Some registration, than designer did not give us!</div>
+      </div>
     </div>
   </div>
 </header>
@@ -218,12 +245,169 @@
             </div>
           </div>
         </section>
+        <section class="page__testimonials testimonials">
+          <div class="testimonials__container">
+            <div class="testimonials__inner">
+              <div class="testimonials__content">
+                <div class="testimonials__block-heading block-heading">
+                  <p class="testimonials__block-heading__subtitle block-heading__subtitle">Testimonials</p>
+                  <h2 class="testimonials__block-heading__title block-heading__title">What people say about Us.</h2>
+                </div>
+
+                <div class="testimonials__swiper-pagination swiper-pagination"></div>
+              </div>
+
+              <div class="testimonials__swiper swiper">
+                <div class="testimonials__swiper-wrapper swiper-wrapper">
+                  <div class="testimonials__swiper-slide swiper-slide">
+                    <picture><source srcset="img/home/testimonials/01.webp" type="image/webp"><img class="testimonials__photo" src="img/home/testimonials/01.png" alt="First photo"></picture>
+                    <p class="testimonials__comment">
+                      “On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no.”
+                    </p>
+                    <h6 class="testimonials__user">Mike taylor</h6>
+                    <p class="testimonials__indo">Lahore, Pakistan</p>
+                  </div>
+                  <div class="testimonials__swiper-slide swiper-slide">
+                    <picture><source srcset="img/home/testimonials/02.webp" type="image/webp"><img class="testimonials__photo" src="img/home/testimonials/02.png" alt="Second photo"></picture>
+                    <p class="testimonials__comment">
+                      “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam nihil nisi numquam reiciendis sed voluptates.“
+                    </p>
+                    <h6 class="testimonials__user">Chris Thomas</h6>
+                    <p class="testimonials__indo">CEO of Red Button</p>
+                  </div>
+                  <div class="testimonials__swiper-slide swiper-slide">
+                    <picture><source srcset="img/home/testimonials/03.webp" type="image/webp"><img class="testimonials__photo" src="img/home/testimonials/03.png" alt="Third photo"></picture>
+                    <p class="testimonials__comment">
+                      “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eius, eum facere incidunt mollitia porro repudiandae voluptates. Eveniet, porro, vel?“
+                    </p>
+                    <h6 class="testimonials__user">Some User</h6>
+                    <p class="testimonials__indo">Some Country</p>
+                  </div>
+                </div>
+
+                <div class="testimonials__swiper-button-prev swiper-button-prev"></div>
+                <div class="testimonials__swiper-button-next swiper-button-next"></div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <section class="page__sponsors sponsors">
+          <div class="sponsors__container">
+            <div class="sponsors__content">
+              <a class="sponsors__link" href="#" target="_blank">
+                <picture><source srcset="img/home/sponsors/01.webp" type="image/webp"><img class="sponsors__image" src="img/home/sponsors/01.png" alt="First sponsor"></picture>
+              </a>
+              <a class="sponsors__link" href="#" target="_blank">
+                <picture><source srcset="img/home/sponsors/02.webp" type="image/webp"><img class="sponsors__image" src="img/home/sponsors/02.png" alt="Second sponsor"></picture>
+              </a>
+              <a class="sponsors__link" href="#" target="_blank">
+                <picture><source srcset="img/home/sponsors/03.webp" type="image/webp"><img class="sponsors__image" src="img/home/sponsors/03.png" alt="Third sponsor"></picture>
+              </a>
+              <a class="sponsors__link" href="#" target="_blank">
+                <picture><source srcset="img/home/sponsors/04.webp" type="image/webp"><img class="sponsors__image" src="img/home/sponsors/04.png" alt="Fourth sponsor"></picture>
+              </a>
+              <a class="sponsors__link" href="#" target="_blank">
+                <picture><source srcset="img/home/sponsors/05.webp" type="image/webp"><img class="sponsors__image" src="img/home/sponsors/05.png" alt="Fifth sponsor"></picture>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="page__feedback feedback">
+          <div class="feedback__container">
+            <div class="feedback__image">
+              <picture><source srcset="img/home/feedback/background.webp" type="image/webp"><img src="img/home/feedback/background.png" alt="Background image"></picture>
+              <svg class="feedback__social">
+                <use xlink:href="img/sprite.svg#telegram"></use>
+              </svg>
+            </div>
+            <div class="feedback__content">
+              <div class="feedback__block-heading block-heading">
+                <h2 class="feedback__block-heading__title block-heading__title block-heading__title_center">
+                  Subscribe to get information, latest news and other interesting offers about Jadoo
+                </h2>
+              </div>
+              <form class="feedback__form">
+                <label class="feedback__label">
+                  <svg class="feedback__mail">
+                    <use xlink:href="img/sprite.svg#mail"></use>
+                  </svg>
+                  <input class="feedback__input" type="email" name="mail" placeholder="Your email">
+                </label>
+                <div class="feedback__button button button_primary-2">
+                  <a href="#">Subscribe</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="footer">
   <div class="footer__container">
+    <div class="footer__content">
+
+      <div class="footer__block">
+        <div class="footer__logo">
+          <svg>
+            <use xlink:href="img/sprite.svg#logo"></use>
+          </svg>
+        </div>
+        <p class="footer__text">Book your trip in minute, get full Control for much longer.
+        </p>
+      </div>
+
+      <div class="footer__block">
+        <ul class="footer__list">
+          <li class="footer__item_title">Company</li>
+          <li class="footer__item"><a class="footer__link" href="#">About</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Careers</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Mobile</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__block">
+        <ul class="footer__list">
+          <li class="footer__item_title">Contact</li>
+          <li class="footer__item"><a class="footer__link" href="#">Help/FAQ</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Press</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Affiliates</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__block">
+        <ul class="footer__list">
+          <li class="footer__item_title">More</li>
+          <li class="footer__item"><a class="footer__link" href="#">Airline fees</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Airline</a></li>
+          <li class="footer__item"><a class="footer__link" href="#">Low fare tips</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__block socials">
+        <div class="socials__links">
+          <svg>
+            <use xlink:href="img/sprite.svg#facebook"></use>
+          </svg>
+          <svg>
+            <use xlink:href="img/sprite.svg#twitter"></use>
+          </svg>
+        </div>
+        <p class="socials__text">Discover our app</p>
+        <div class="socials__apps">
+          <a href="https://play.google.com/" target="_blank"><picture><source srcset="img/footer/google-play.webp" type="image/webp"><img src="img/footer/google-play.png" alt="Google play"></picture></a>
+          <a href="https://www.apple.com/app-store/" target="_blank"><picture><source srcset="img/footer/play-store.webp" type="image/webp"><img src="img/footer/play-store.png" alt="Play store"></picture></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer__copywriting copywriting">
+      <p class="copywriting__text">All rights reserved@jadoo.com</p>
+      <a class="copywriting__link" href="https://github.com/Chipernes" target="_blank">Made by Chipernes</a>
+    </div>
   </div>
 </footer>
     </div>
-    <script defer src="js/app.min.js?_v=20230915234354"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js?_v=20231024103123"></script>
+<script defer src="js/app.min.js?_v=20231024103123"></script>
   </body>
 </html>
